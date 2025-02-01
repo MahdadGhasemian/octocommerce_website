@@ -40,7 +40,7 @@ const nextConfig = {
       },
       {
         protocol: 'http',
-        hostname: '192.168.1.118',
+        hostname: 'localhost',
       },
       {
         protocol: 'http',

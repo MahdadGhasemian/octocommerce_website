@@ -14,16 +14,8 @@ const TrustSeal = () => {
           border: '1px solid #e5e5ea',
         }}
       >
-        <a
-          href='https://trustseal.enamad.ir/?id=540583&Code=ByPX6MxgyeuPefu8g51GacQ9YEUaXaGC'
-          target='_blank'
-          rel='noopener'
-        >
-          <img
-            style={{ width: '92px', height: '100px' }}
-            src='https://trustseal.enamad.ir/logo.aspx?id=540583&Code=ByPX6MxgyeuPefu8g51GacQ9YEUaXaGC'
-            alt='Trust Seal'
-          />
+        <a href='' target='_blank' rel='noopener'>
+          <img style={{ width: '92px', height: '100px' }} src='' alt='Trust Seal' />
         </a>
       </div>
     </div>
