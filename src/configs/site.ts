@@ -3,11 +3,10 @@ import { BaseUrl } from '@/configs/settings';
 export const siteConfig = {
   title: 'اُکتو کامرس',
   main_title: 'فروشگاه آنلاین اُکتو کامرس',
-  description:
-    'مرکز تخصصی مشاوره، بررسی، انتخاب و خرید قطعات الکترونیک و برق - مشاوره و اجرای پروژههای الکترونیک، نرم افزار و سخت افزار - شرکت اُکتو کامرس',
+  description: 'نمونه یک فروشگاه آنلاین به همراه پنل مدیریت فروشگاه',
   application_name: 'اُکتو کامرس',
-  phoneNumbers: ['02188392615', '09903499905', '09903499906'],
-  supportPhoneNumber: '+982188392615',
+  phoneNumbers: ['0123456789', '01234567891', '01234567892'],
+  supportPhoneNumber: '+0123456789',
   /** Without additional '/' on the end */
   url: `${BaseUrl}`,
   landing: {

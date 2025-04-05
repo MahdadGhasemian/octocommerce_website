@@ -4,18 +4,6 @@ import Link from 'next/link';
 const MenuItems = () => {
   const links = [
     {
-      title: 'قطعات الکترونیک',
-      href: '/electronic-devices',
-    },
-    {
-      title: 'ترانسفورماتور های برق قدرت',
-      href: '/power-transformers',
-    },
-    {
-      title: 'محصولات تابلو و سینی کابل',
-      href: '/power-box',
-    },
-    {
       title: 'سوالی دارید؟',
       href: '/',
     },
@@ -36,7 +24,7 @@ const MenuItems = () => {
           <div className='dropdown-content w-screen z-[1] mt-1 mx-0 h-screen bg-neutral-300/40'>
             <div className='p-4 bg-white max-w-screen-md min-w-96'>
               <ul className='menu rounded-box'>
-                {links?.map((link) => (
+                {links?.map(link => (
                   <li key={link.title}>
                     <Link href={link.href}>{link.title}</Link>
                   </li>
@@ -46,11 +34,8 @@ const MenuItems = () => {
           </div>
         </li>
 
-        {links?.map((link) => (
-          <li
-            key={link.title}
-            className='hidden xl:block text-gray-700 cursor-pointer'
-          >
+        {links?.map(link => (
+          <li key={link.title} className='hidden xl:block text-gray-700 cursor-pointer'>
             <Link href={link.href}>{link.title}</Link>
           </li>
         ))}
