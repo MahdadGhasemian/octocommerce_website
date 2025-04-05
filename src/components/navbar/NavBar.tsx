@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className='hidden sm:block'>
             <Link href='/'>
-              <Logo className='md:w-48 lg:w-64' />
+              {/* <Logo className='md:w-48 lg:w-64' /> */}
             </Link>
           </div>
           {/* Search input */}
@@ -117,7 +117,7 @@ const Navbar = () => {
                   <div>
                     <div className='flex md:hidden gap-2 justify-center items-center place-items-center'>
                       <span className='whitespace-nowrap'>جستجو در</span>
-                      <Logo className='w-32' />
+                      {/* <Logo className='w-32' /> */}
                     </div>
                     <span className='hidden md:block whitespace-nowrap'>جستجو ...</span>
                   </div>

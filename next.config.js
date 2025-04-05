@@ -20,10 +20,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'trustseal.enamad.ir',
-      },
-      {
-        protocol: 'https',
         hostname: 'www.instagram.com',
       },
       {
@@ -40,7 +36,7 @@ const nextConfig = {
       },
       {
         protocol: 'http',
-        hostname: '192.168.1.118',
+        hostname: 'localhost',
       },
       {
         protocol: 'http',
