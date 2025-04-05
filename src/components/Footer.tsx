@@ -2,9 +2,8 @@ import Link from 'next/link';
 import * as React from 'react';
 
 import SocialLinks from '@/components/SocialLinks';
-import TrustSeal from '@/components/TrustSeal';
 
-import Logo from '~/svg/Logo.svg';
+// import Logo from '~/svg/Logo.svg';
 
 export default function Footer() {
   return (
@@ -17,7 +16,7 @@ export default function Footer() {
               style={{ width: '195px', height: '30px', lineHeight: '0' }}
             >
               <Link href='/'>
-                <Logo className='w-48 md:w-64' />
+                {/* <Logo className='w-48 md:w-64' /> */}
               </Link>
             </div>
           </div>
@@ -26,32 +25,18 @@ export default function Footer() {
             <p className='shrink-0'> تلفن های فروش و پشتیبانی : </p>
             <span className='hidden md:block'>&nbsp;</span>
             <p className='shrink-0' dir='ltr' data-cro-id='footer-phonenumber'>
-              ۰۲۱ - ۸۸۳۹۲۶۱۵
+              شماره اول
             </p>
             <div className='px-5 text-neutral-400 hidden md:block'>|</div>
             <p className='shrink-0' dir='ltr'>
-              ۰۹۹۰ ۳۴ ۹۹۹ ۰۵
-            </p>
-            <div className='px-5 text-neutral-400 hidden md:block'>|</div>
-            <p className='shrink-0' dir='ltr'>
-              ۰۹۹۰ ۳۴ ۹۹۹ ۰۶
-            </p>
-            <div className='px-5 text-neutral-400 hidden md:block'>|</div>
-            <p className='shrink-0' dir='ltr'>
-              ۰۹۹۰ ۳۴ ۹۹۹ ۰۷
-            </p>
-            <div className='px-5 text-neutral-400 hidden md:block'>|</div>
-            <p className='w-full mt-1 md:mt-0'>
-              در روزهای کاری پاسخ گوی شما هستیم و از شنیدن صدای شما خوشحال می
-              شویم.
+              شماره دوم
             </p>
           </div>
           <div className='mb-8 mt-4 md:mt-3 md:mb-0 flex items-center flex-wrap flex-col lg:flex-nowrap text-body-2 text-neutral-700'>
             <p className='w-full mt-1 md:mt-0'>
               <span>آدرس : </span>
               <span>
-                تهران - یوسف آباد - خیابان شهید عبدالحمید اکبری - خیابان لاله
-                (37/2) - پلاک 7 - طبقه 4 - واحد 16
+                آدرس فروشگاه
               </span>
             </p>
             <p className='w-full mt-1'>
@@ -65,7 +50,6 @@ export default function Footer() {
 
         <div className='flex flex-col sm:flex-row gap-4 sm:gap-1 md:gap-14 justify-between md:justify-end items-center'>
           <SocialLinks />
-          <TrustSeal />
         </div>
       </div>
     </footer>
