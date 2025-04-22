@@ -430,26 +430,6 @@ export type StockInfo = {
   updated_at: Date;
 };
 
-export type Wallet = {
-  balance: number;
-};
-
-export type WalletTransaction = {
-  id: number;
-  amount: number;
-  transaction_type: TransactionType;
-  transaction_note: TransactionNote;
-  user_id: number;
-  user: User;
-  order_id?: number;
-  order?: {
-    id: number;
-    order_invoice_number: number;
-  };
-  created_at: Date;
-  updated_at: Date;
-};
-
 export type Review = {
   id: number;
   title?: string;
@@ -1044,31 +1024,6 @@ class BasicService {
     return api.get(`/store/inventories/stock/stock/product/${product_id}/virtualy`).then(response => {
       return response?.data;
     });
-  }
-
-  // Wallet
-  getMyWallet(): Promise<Wallet> {
-    return api.get(`/store/wallets/my`).then(response => {
-      return response?.data;
-    });
-  }
-
-  getAllWalletTransaction(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<WalletTransaction>> {
-    const params = createParams(limit, page, search, columnFilters, sorting);
-
-    return api
-      .get('/store/wallets/transactions', {
-        params,
-      })
-      .then(response => {
-        return response?.data;
-      });
   }
 
   // Review
