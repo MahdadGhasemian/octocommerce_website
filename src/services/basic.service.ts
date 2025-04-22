@@ -32,7 +32,6 @@ export enum PaymentStatus {
 
 export enum PaymentType {
   RECEIPT = 'receipt',
-  DEBIT = 'debit',
   ONLINE = 'online',
 }
 
@@ -81,12 +80,6 @@ export enum TransactionType {
 
 export enum TransactionNote {
   DiscountProfit = 'discount_profit',
-  BonusProfit = 'bonus_profit',
-}
-
-export enum BonusType {
-  Constant = 'constant',
-  Percentage = 'percentage',
 }
 
 export enum RecommendationType {
@@ -102,6 +95,7 @@ export type Setting = {
   tax_rate_default: number;
   delivery_center_latitude: number;
   delivery_center_longitude: number;
+  product_code_prefix?: string;
 };
 
 export type StockInfoModel = {
@@ -432,42 +426,6 @@ export type StockInfo = {
   product: Product;
   inventory_item_id: number;
   inventory_item: InventoryItem;
-  created_at: Date;
-  updated_at: Date;
-};
-
-export type Wallet = {
-  balance: number;
-};
-
-export type WalletTransaction = {
-  id: number;
-  amount: number;
-  transaction_type: TransactionType;
-  transaction_note: TransactionNote;
-  user_id: number;
-  user: User;
-  order_id?: number;
-  order?: {
-    id: number;
-    order_invoice_number: number;
-  };
-  created_at: Date;
-  updated_at: Date;
-};
-
-export type Bonus = {
-  id: number;
-  title: string;
-  description: string;
-  bonus_type: BonusType;
-  constant_amount: number;
-  percentage_amount: number;
-  is_enabled: boolean;
-  start_date: Date;
-  end_date: Date;
-  allowed_users: User[];
-  allowed_products: Product[];
   created_at: Date;
   updated_at: Date;
 };
@@ -1064,74 +1022,6 @@ class BasicService {
 
   getStockProductVirtualy(product_id: number): Promise<{ available_quantity: number }> {
     return api.get(`/store/inventories/stock/stock/product/${product_id}/virtualy`).then(response => {
-      return response?.data;
-    });
-  }
-
-  // Wallet
-  getMyWallet(): Promise<Wallet> {
-    return api.get(`/store/wallets/my`).then(response => {
-      return response?.data;
-    });
-  }
-
-  getAllWalletTransaction(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<WalletTransaction>> {
-    const params = createParams(limit, page, search, columnFilters, sorting);
-
-    return api
-      .get('/store/wallets/transactions', {
-        params,
-      })
-      .then(response => {
-        return response?.data;
-      });
-  }
-
-  // Bonus
-  getAllBonus(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<Bonus>> {
-    const params = createParams(limit, page, search, columnFilters, sorting);
-
-    return api
-      .get('/store/bonuses', {
-        params,
-      })
-      .then(response => {
-        return response?.data;
-      });
-  }
-
-  createBonus(bonus: Partial<Bonus>): Promise<Bonus> {
-    return api.post('/store/bonuses', bonus).then(response => {
-      return response?.data;
-    });
-  }
-
-  getBonus(id: number): Promise<Bonus> {
-    return api.get(`/store/bonuses/${id}`).then(response => {
-      return response?.data;
-    });
-  }
-
-  editBonus(id: number, bonus: Partial<Bonus>): Promise<Bonus> {
-    return api.patch(`/store/bonuses/${id}`, bonus).then(response => {
-      return response?.data;
-    });
-  }
-
-  deleteBonus(id: number): Promise<object> {
-    return api.delete(`/store/bonuses/${id}`).then(response => {
       return response?.data;
     });
   }
